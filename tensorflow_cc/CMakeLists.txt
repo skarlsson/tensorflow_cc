@@ -213,19 +213,19 @@ install(
 if (NOT SYSTEM_PROTOBUF)
   install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/tensorflow/tensorflow/contrib/makefile/gen/protobuf-host/lib/libprotobuf.a"
-    DESTINATION lib/tensorflow_cc
+    DESTINATION lib
   )
 endif()
 # shared library specific
 if(TENSORFLOW_SHARED)
   install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/tensorflow/bazel-bin/tensorflow/libtensorflow_cc.so"
-    DESTINATION lib/tensorflow_cc
+    DESTINATION lib
     OPTIONAL
   )
   install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/tensorflow/bazel-bin/bin/tensorflow/libtensorflow_cc.so"
-    DESTINATION lib/tensorflow_cc
+    DESTINATION lib
     OPTIONAL
   )
 endif()
@@ -233,8 +233,12 @@ endif()
 if(TENSORFLOW_STATIC)
   install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a"
-          "${CMAKE_CURRENT_BINARY_DIR}/tensorflow/tensorflow/contrib/makefile/downloads/nsync/builds/default.linux.c++11/nsync.a"
-    DESTINATION lib/tensorflow_cc
+    DESTINATION lib
+  )
+  install(
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/tensorflow/tensorflow/contrib/makefile/downloads/nsync/builds/default.linux.c++11/nsync.a"
+    DESTINATION lib
+    RENAME libnsync.a
   )
 endif()
 
