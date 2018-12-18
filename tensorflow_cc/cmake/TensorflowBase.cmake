@@ -3,7 +3,7 @@ include(ExternalProject)
 
 # TODO This is a patch for 1.12.0.
 set(OLD_PROTOBUF "https://mirror.bazel.build/github.com/google/protobuf/archive/396336eb961b75f03b25824fe86cf6490fb75e3a.tar.gz")
-set(FIXED_PROTOBUF "https://github.com/protocolbuffers/protobuf/releases/download/v3.6.0/protobuf-all-3.6.0.tar.gz")
+set(FIXED_PROTOBUF "https://github.com/protocolbuffers/protobuf/releases/download/v3.6.1/protobuf-all-3.6.1.tar.gz")
 
 ExternalProject_Add(
   tensorflow_base
